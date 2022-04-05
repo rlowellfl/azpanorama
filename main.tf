@@ -62,6 +62,6 @@ module "panorama" {
   paloversion   = var.paloversion
   palouser      = var.palouser
   palopass      = var.palopass
-  vnetid        = module.network.networkid
+  vnetid        = module.network.vnetid
   panoramasubid = module.network.panoramasubid
 }

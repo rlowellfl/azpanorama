@@ -2,7 +2,7 @@ output "vnetname" {
   value = azurerm_virtual_network.vnet.name
 }
 
-output "networkid" {
+output "vnetid" {
   value = azurerm_virtual_network.vnet.id
 }
 
