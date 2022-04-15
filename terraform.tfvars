@@ -9,8 +9,9 @@ panoramasubrange = ["10.0.0.0/27"]
 allowedips       = ["<your public ip here>"]
 
 # Palo Alto Panorama variables
+bootdiagsname   = "<storage account name>"
 palodeploycount = "1"
-palovmsize      = "Standard_D4s_v4"
+palovmsize      = "Standard_D8s_v4"
 palooffer       = "panorama"
 palosku         = "byol"
 paloversion     = "10.1.3"

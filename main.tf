@@ -34,6 +34,14 @@ provider "azurerm" {
 resource "azurerm_resource_group" "network" {
   name     = "rg-${var.environment}-${var.location}-panorama"
   location = var.location
+  tags = {
+    environment = var.environment
+    location = var.location
+    BusinessUnit = "IT"
+    OpsTeam = "Network"
+    ApplicationName = "${var.location} Palo Alto Panorama"
+    Owner = "john@doe.com"
+  }
 }
 
 # Deploy the virtual network
@@ -64,4 +72,5 @@ module "panorama" {
   palopass      = var.palopass
   vnetid        = module.network.vnetid
   panoramasubid = module.network.panoramasubid
+  bootdiagsname     = azurerm_storage_account.bootdiags.primary_blob_endpoint
 }
