@@ -16,7 +16,7 @@ terraform {
       version = "=3.0.1"
     }
   }
-/*  backend "azurerm" {
+  /*  backend "azurerm" {
     resource_group_name  = "<rg for terraform state backend storage>"
     storage_account_name = "<storage account for terraform state backend storage>"
     container_name       = "panoramatfstate"
@@ -35,12 +35,12 @@ resource "azurerm_resource_group" "network" {
   name     = "rg-${var.environment}-${var.location}-panorama"
   location = var.location
   tags = {
-    environment = var.environment
-    location = var.location
-    BusinessUnit = "IT"
-    OpsTeam = "Network"
+    environment     = var.environment
+    location        = var.location
+    BusinessUnit    = "IT"
+    OpsTeam         = "Network"
     ApplicationName = "${var.location} Palo Alto Panorama"
-    Owner = "john@doe.com"
+    Owner           = "john@doe.com"
   }
 }
 
@@ -72,5 +72,5 @@ module "panorama" {
   palopass      = var.palopass
   vnetid        = module.network.vnetid
   panoramasubid = module.network.panoramasubid
-  bootdiagsname     = azurerm_storage_account.bootdiags.primary_blob_endpoint
+  bootdiagsname = azurerm_storage_account.bootdiags.primary_blob_endpoint
 }

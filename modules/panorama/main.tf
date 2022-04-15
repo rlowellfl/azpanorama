@@ -32,7 +32,7 @@ resource "azurerm_virtual_machine" "panorama" {
   delete_data_disks_on_termination = true
 
   boot_diagnostics = {
-    enabled = true
+    enabled     = true
     storage_uri = var.bootdiagsname
   }
 
